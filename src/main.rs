@@ -7,8 +7,8 @@ fn main() {
     let image_path1 = get_image_path(1usize);
     let image_path2 = get_image_path(2usize);
 
-    let image_1: ImageResult<DynamicImage> = image::open(format!("./assets/{}", image_path1));
-    let image_2: ImageResult<DynamicImage> = image::open(format!("./assets/{}", image_path2));
+    let image_1: ImageResult<DynamicImage> = image::open(image_path1);
+    let image_2: ImageResult<DynamicImage> = image::open(image_path2);
 
     let img_1 = image_1.expect("failed to open image 1");
     let img_2 = image_2.expect("failed to open image 2");
@@ -32,5 +32,5 @@ fn get_image_path(index:usize) -> String {
         panic!("Image path wasn't given");
     }
 
-    String::from(args[index].clone())
+    String::from(format!("./assets/{}", args[index].clone()))
 }
