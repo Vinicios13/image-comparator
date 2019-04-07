@@ -3,8 +3,9 @@
 ```console
 cargo run img1.jpeg img2.jpeg 10.4
 ```
+*first and second argument -> name of the images*
 
-*the last argument default value is 0*
+*third argument  -> acceptable difference between pixels, its optional and the default value is 0*
 
 *images should be put under assets folder and have the same dimensions*
 
